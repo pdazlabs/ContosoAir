@@ -8,15 +8,15 @@ trigger:
 
 resources:
  pipelines:
-  - pipeline: pdazlabs.ContosoAir # identifier for the resource used in pipeline resource variables
-    source: Student1-45243822.ContosoAir # name of the pipeline that produces the artifact
+  - pipeline: buildContosoAir # identifier for the resource used in pipeline resource variables
+    source: pdazlabs.ContosoAir # name of the pipeline that produces the artifact
     trigger:
      branches:
       include:
        - master
 
 pool:
-  vmImage: ubuntu-latest
+  name: default
 
 steps:
 - task: DownloadPipelineArtifact@2
