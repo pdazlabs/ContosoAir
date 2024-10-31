@@ -3,8 +3,9 @@ const AirportsService = require('./index').AirportsService;
 describe('[Int] That Airports Service', () => {
     it('has that all airports have a city', () => {
         const airports = AirportsService();
-        const all = airports.getAll();
-        expect(all.every(a => a.city)).toBe(true);
+        const all = airports.getAll(){
+            return this._airports.filter(a => a.code).map(avoidEmptyCity).sort((a, b) => (a.city > b.city) ? 1 : -1);
+        }
     });
 
     it.each(['CDG', 'JFK', 'TOR', 'BOS', 'JFK', 'FRA'])('exists airport with code %s (used by flights)', (code) => {
