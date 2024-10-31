@@ -6,8 +6,6 @@ describe('[Int] That Airports Service', () => {
         const all = airports.getAll(){
             return this._airports.filter(a => a.code).map(avoidEmptyCity).sort((a, b) => (a.city > b.city) ? 1 : -1);
         }
-    });
-
     it.each(['CDG', 'JFK', 'TOR', 'BOS', 'JFK', 'FRA'])('exists airport with code %s (used by flights)', (code) => {
         const airports = AirportsService();
         const airport = airports.getByCode(code);
