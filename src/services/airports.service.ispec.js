@@ -6,7 +6,6 @@ describe('[Int] That Airports Service', () => {
         const all = airports.getAll();
         expect(all.every(a => a.city)).toBe(true);
     });
-
     it.each(['CDG', 'JFK', 'TOR', 'BOS', 'JFK', 'FRA'])('exists airport with code %s (used by flights)', (code) => {
         const airports = AirportsService();
         const airport = airports.getByCode(code);
